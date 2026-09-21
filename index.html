@@ -105,7 +105,7 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
   <h2 id="about">About this page</h2>
   <p>A practice page made by Dr Akira Murata (Juntendo University, Japan; co-founder, Awesome AI Asia) for participants of <i>Japan Meets India AI Nexus 2026</i> at Acharya Institutes, Bengaluru. The name is used with the kind permission of the organisers. The page is run by Dr Murata, <b>not</b> by Acharya Institutes; it is not an official service of the institute, and it says nothing about what any particular AI tool can do.</p>
   <p><b>Privacy:</b> this page has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
-  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 1.0, 22 September 2026</p>
+  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 1.1, 22 September 2026</p>
 </main>
 <footer><div class="wrap">AI drafts and criticises. You verify, decide and sign.<br><button id="reset" type="button">Reset my progress on this device</button></div></footer>
 
@@ -148,8 +148,9 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
     var name = 'White', next = 'Tick your first finished mission to earn the Yellow belt.';
     if (m >= 1) { name = 'Yellow'; next = 'Tick a second mission to earn the Green belt.'; }
     if (m >= 2) { name = 'Green'; next = 'Tick all three missions to earn the Brown belt.'; }
-    if (m >= 3) { name = 'Brown'; next = 'Six drills in the training grounds earn the Black belt (' + Math.min(d, 6) + ' of 6).'; }
-    if (m >= 3 && d >= 6) { name = 'Black'; next = 'Now teach one mission to your own lab. That is how it stays.'; }
+    var all = DATA.drills.length;
+    if (m >= 3) { name = 'Brown'; next = 'Finish every drill in the training grounds to earn the Black belt (' + d + ' of ' + all + ').'; }
+    if (m >= 3 && d >= all) { name = 'Black'; next = 'Now teach one mission to your own lab. That is how it stays.'; }
     var b = document.getElementById('belt'); b.innerHTML = '';
     b.appendChild(el('span', 'chip ' + name, name + ' belt'));
     var t = el('div'); t.appendChild(el('b', null, 'Your path: ' + m + ' of 3 missions · ' + d + ' of ' + DATA.drills.length + ' drills')); t.appendChild(el('small', null, next)); b.appendChild(t);
