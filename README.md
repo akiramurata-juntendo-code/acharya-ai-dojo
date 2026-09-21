@@ -4,6 +4,6 @@ A practice site for participants of *Japan Meets India AI Nexus 2026* (Bengaluru
 
 **Live site:** https://akiramurata-juntendo-code.github.io/acharya-ai-dojo/ · [Research track](https://akiramurata-juntendo-code.github.io/acharya-ai-dojo/research/) · [Student track](https://akiramurata-juntendo-code.github.io/acharya-ai-dojo/students/) · [Administration track](https://akiramurata-juntendo-code.github.io/acharya-ai-dojo/administration/)
 
-Made and run by Dr Akira Murata (Juntendo University; co-founder, Awesome AI Asia). The name is used with the kind permission of the organisers at Acharya Institutes; the site is **not** an official service of the institute.
+Made and run by Dr Akira Murata (Juntendo University; co-founder, Awesome AI Asia). The site is **not** an official service of Acharya Institutes.
 
 All example texts are fictional. The site has no forms, no analytics and no cookies; progress is stored only in the visitor's own browser (localStorage). This repository contains no personal data about participants.
