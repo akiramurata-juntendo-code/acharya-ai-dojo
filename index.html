@@ -23,6 +23,15 @@ nav.bar a{flex:0 0 auto;padding:12px 9px;font-size:15px;font-weight:600;text-dec
 .belt .chip{display:inline-block;flex:0 0 auto;white-space:nowrap;min-width:74px;text-align:center;font-weight:700;padding:4px 10px;border-radius:999px;border:2px solid var(--navy);background:#fff}
 .belt .chip.White{background:#fff}.belt .chip.Yellow{background:#F6D860}.belt .chip.Green{background:#7FB58A}.belt .chip.Brown{background:#9C6B3F;color:#fff}.belt .chip.Black{background:#111;color:#fff}
 .belt small{color:var(--grey);display:block}
+details.ladder{background:#fff;border:1px solid var(--line);border-radius:6px;margin:-6px 0 14px}
+details.ladder>summary{cursor:pointer;padding:12px;font-weight:700;font-size:15.5px;min-height:44px;color:var(--navy)}
+details.ladder ol{list-style:none;margin:0;padding:0 12px 4px}
+details.ladder li{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:15.5px}
+details.ladder li .chip{flex:0 0 auto;min-width:66px;text-align:center;font-weight:700;font-size:13.5px;padding:3px 8px;border-radius:999px;border:2px solid var(--navy);background:#fff}
+details.ladder li .chip.Yellow{background:#F6D860}details.ladder li .chip.Green{background:#7FB58A}details.ladder li .chip.Brown{background:#9C6B3F;color:#fff}details.ladder li .chip.Black{background:#111;color:#fff}
+details.ladder li .mark{flex:0 0 auto;width:20px;text-align:center;font-weight:700;color:var(--ok)}
+details.ladder li.now{background:var(--beige);margin:0 -12px;padding:7px 12px;font-weight:700}
+details.ladder p{margin:0;padding:8px 12px 12px;font-size:14.5px;color:var(--grey);border-top:1px solid var(--line)}
 .master{display:flex;gap:12px;align-items:flex-end;margin:16px 0 6px}
 .master img{width:96px;height:auto;flex:0 0 auto}
 .bubble{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
@@ -82,6 +91,7 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
   <div class="master"><img src="assets/master.webp" alt="The dojo master, an old man holding a scroll" width="400" height="533">
     <div class="bubble">Welcome. One rule in this dojo: the AI is your <b>critic</b> and your <b>drafter</b> — never your <b>witness</b>. It argues well. It testifies badly.</div></div>
   <div class="belt" id="belt" aria-live="polite"></div>
+  <details class="ladder" open><summary>How the belts work</summary><ol id="ladder"></ol><p>You tick the boxes yourself when you have done a mission or a drill. The belts are a study guide, not a certificate, and nothing leaves your phone.</p></details>
   <div class="safe" id="safe"></div>
 
   <h2 id="missions">Today’s three missions<small>Pen first, phone second. Tap a mission. “Copy prompt + text” gives you both in one piece: paste it into the assistant you normally use, and send.</small></h2>
@@ -105,7 +115,7 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
   <h2 id="about">About this page</h2>
   <p>A practice page made by Dr Akira Murata (Juntendo University, Japan; co-founder, Awesome AI Asia) for participants of <i>Japan Meets India AI Nexus 2026</i> at Acharya Institutes, Bengaluru. The name is used with the kind permission of the organisers. The page is run by Dr Murata, <b>not</b> by Acharya Institutes; it is not an official service of the institute, and it says nothing about what any particular AI tool can do.</p>
   <p><b>Privacy:</b> this page has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
-  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 1.1, 22 September 2026</p>
+  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 1.2, 22 September 2026</p>
 </main>
 <footer><div class="wrap">AI drafts and criticises. You verify, decide and sign.<br><button id="reset" type="button">Reset my progress on this device</button></div></footer>
 
@@ -151,6 +161,9 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
     var all = DATA.drills.length;
     if (m >= 3) { name = 'Brown'; next = 'Finish every drill in the training grounds to earn the Black belt (' + d + ' of ' + all + ').'; }
     if (m >= 3 && d >= all) { name = 'Black'; next = 'Now teach one mission to your own lab. That is how it stays.'; }
+    var steps = [['White', 'You start here'], ['Yellow', 'Tick 1 mission'], ['Green', 'Tick 2 missions'], ['Brown', 'Tick all 3 missions'], ['Black', 'All 3 missions and all ' + all + ' drills']];
+    var order = ['White', 'Yellow', 'Green', 'Brown', 'Black'], at = order.indexOf(name), lad = document.getElementById('ladder'); lad.innerHTML = '';
+    steps.forEach(function(st, i){ var li = el('li', i === at ? 'now' : null); li.appendChild(el('span', 'mark', i <= at ? '✓' : '')); li.appendChild(el('span', 'chip ' + st[0], st[0])); li.appendChild(el('span', null, st[1] + (i === at ? ' — your belt now' : ''))); lad.appendChild(li); });
     var b = document.getElementById('belt'); b.innerHTML = '';
     b.appendChild(el('span', 'chip ' + name, name + ' belt'));
     var t = el('div'); t.appendChild(el('b', null, 'Your path: ' + m + ' of 3 missions · ' + d + ' of ' + DATA.drills.length + ' drills')); t.appendChild(el('small', null, next)); b.appendChild(t);
