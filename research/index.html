@@ -64,7 +64,7 @@ button{font:inherit;cursor:pointer}
 details.rev{margin:14px 0;border:1px dashed var(--gold);border-radius:6px;background:#FFFDF7}
 details.rev>summary{cursor:pointer;padding:12px;font-weight:700;color:var(--goldtext);min-height:44px}
 details.rev pre{border:0;background:transparent;font-family:inherit;font-size:16px;padding:0 12px 12px}
-.note{background:var(--beige);border-left:4px solid var(--gold);padding:10px 12px;border-radius:4px;font-size:15.5px}
+.note{background:var(--beige);border-left:4px solid var(--gold);padding:10px 12px;border-radius:4px;font-size:15.5px;white-space:pre-line}
 label.done{display:flex;gap:10px;align-items:center;margin-top:14px;padding:12px;border-radius:6px;background:var(--mist);font-weight:700;min-height:48px}
 label.done input{width:22px;height:22px;flex:0 0 auto}
 .muted{color:var(--grey)}
@@ -95,10 +95,10 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
   <div class="master"><img src="../assets/master.webp" alt="The dojo master, an old man holding a scroll" width="400" height="533">
     <div class="bubble">Welcome. One rule in this dojo: the AI is your <b>critic</b> and your <b>drafter</b> — never your <b>witness</b>. It argues well. It testifies badly.</div></div>
   <div class="belt" id="belt" aria-live="polite"></div>
-  <details class="ladder" open><summary>How the belts work</summary><ol id="ladder"></ol><p>You tick the boxes yourself when you have done a mission or a drill. The belts are a study guide, not a certificate, and nothing leaves your phone.</p></details>
+  <details class="ladder" open><summary>How the belts work</summary><ol id="ladder"></ol><p>You tick the boxes yourself when you have done a mission or a drill. The belts are a study guide, not a certificate, and nothing leaves your device.</p></details>
   <div class="safe" id="safe"></div>
 
-  <h2 id="missions">Today’s three missions<small>Pen first, phone second. Tap a mission. “Copy prompt + text” gives you both in one piece: paste it into the assistant you normally use, and send.</small></h2>
+  <h2 id="missions">Today’s three missions<small>Pen first, phone second. Tap a mission. Where a prompt comes with a text, the first button under it copies both in one piece: paste it into the assistant you normally use, and send.</small></h2>
   <div id="mlist"></div>
   <p class="note" id="always"></p>
 
@@ -115,8 +115,8 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
 
   <h2 id="about">About this page</h2>
   <p>A practice page made by Dr Akira Murata (Juntendo University, Japan; co-founder, Awesome AI Asia) for participants of <i>Japan Meets India AI Nexus 2026</i> at Acharya Institutes, Bengaluru. The name is used with the kind permission of the organisers. The page is run by Dr Murata, <b>not</b> by Acharya Institutes; it is not an official service of the institute, and it says nothing about what any particular AI tool can do.</p>
-  <p><b>Privacy:</b> this page has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
-  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · <a href="../">Dojo home</a> · Version 2.0, 22 September 2026</p>
+  <p><b>Privacy:</b> this page has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All people, colleges, offices, studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
+  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · <a href="../">Dojo home</a> · Version 2.4, 22 September 2026</p>
 </main>
 <footer><div class="wrap">AI drafts and criticises. You verify, decide and sign.<br><button id="reset" type="button">Reset my progress on this track</button></div></footer>
 
@@ -145,7 +145,7 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
     if (kind === 'reveal') { var r = el('details', 'rev'); r.appendChild(el('summary', null, 'Tap to show · ' + label)); r.appendChild(el('pre', null, body)); d.appendChild(r); return d; }
     d.appendChild(el('div', 'lbl', label));
     d.appendChild(el('pre', kind === 'text' ? 'src' : null, body));
-    if (extra) { d.appendChild(copyBtn(body + '\n\n' + extra, 'Copy prompt + text')); d.appendChild(copyBtn(body, 'Prompt only', true)); }
+    if (extra) { d.appendChild(DATA.textfirst ? copyBtn(extra + '\n\n' + body, 'Copy text + prompt') : copyBtn(body + '\n\n' + extra, 'Copy prompt + text')); d.appendChild(copyBtn(body, 'Prompt only', true)); }
     else { d.appendChild(copyBtn(body)); }
     return d;
   }
@@ -187,8 +187,8 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
       var c = el('details', 'card'), s = el('summary'); s.appendChild(el('span', null, x.title)); s.appendChild(el('span', 'tag', x.belt + ' · ' + x.min + ' min')); c.appendChild(s);
       var inner = el('div', 'inner');
       if (x.task) inner.appendChild(el('p', 'lead', x.task));
-      if (x.text) inner.appendChild(block('text', 'Fictional example', x.text));
-      if (x.prompt) inner.appendChild(block('prompt', 'The prompt', x.prompt, x.text));
+      if (x.text) { var tb = block('text', 'Fictional example', x.text); if (x.nocopy) { tb.removeChild(tb.lastChild); } inner.appendChild(tb); }
+      if (x.prompt) inner.appendChild(block('prompt', 'The prompt', x.prompt, x.nowith ? null : x.text));
       if (x.reveal) inner.appendChild(block('reveal', 'the answer and the point', x.reveal));
       inner.appendChild(doneBox(x.id, 'Done')); c.appendChild(inner); dl.appendChild(c);
     });

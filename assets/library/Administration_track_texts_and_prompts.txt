@@ -1,0 +1,104 @@
+ACHARYA AI DOJO - ADMINISTRATION TRACK - texts and prompts (all fictional)
+
+============================================================
+Mission 1 · Document first, instruction last - then check the draft
+
+--- Fictional training case · memo and practice draft
+SOURCE MEMO - your only source (fictional)
+M1  Sender: Training Office, Example College (fictional). Readers: office colleagues.
+M2  Purpose: invite colleagues to express interest in an optional Clear Files briefing.
+M3  Proposed date and time: 16 November 2027, 14:00-14:30. These are not final.
+M4  No room has been assigned.
+M5  Approval from the office manager is still pending.
+M6  Interested colleagues may reply. No reply deadline has been set.
+M7  Include this reminder: Please do not send student or staff records.
+M8  Send a planning update only. Booking is not open.
+
+PRACTICE DRAFT - deliberately wrong (written for this exercise, not captured from an AI service)
+Subject: Approved Clear Files briefing - reply by 12 November
+
+Dear colleagues,
+
+Confirmed briefing
+The office manager has approved the Clear Files briefing for 16 November 2027, 14:00-14:30, in Room 204. All office staff must attend.
+
+Book now
+Reply by 12 November 2027 at 17:00 to reserve your place. The manager will probably allow refreshments. Please do not send student or staff records.
+
+Best regards, Training Office
+
+--- On your device: material first, instruction last
+“Using only memo M1-M8, correct the practice email. Write a 60-100-word body, excluding the subject, headings and sign-off. Add a subject and two short headings. Preserve uncertain information and optional attendance. Add no room, approval, deadline or benefit that the memo does not support. List unresolved items separately. Draft only; do not send.”
+
+============================================================
+Mission 2 · Can this leave the building?
+
+--- Eight fictional cards · Which material can we use here?
+1. A public, reusable opening-hours notice. Its owner explicitly permits reuse.
+2. A made-up planning memo written for this exercise; no real people or events.
+3. An unpublished internal staffing plan. No one has checked the institution's AI rules.
+4. A student support record containing a name and private circumstances.
+5. A partner's confidential draft contract. The permission to share has not been checked.
+6. A staff complaint with the name removed but a unique role and incident still present.
+7. A purchased e-book PDF with no established permission for upload or redistribution.
+8. A public policy webpage, but its date and reuse conditions have not been checked.
+
+============================================================
+Mission 3 · The habit that makes it safe: verify, then sign
+
+--- Fictional example · a rough note and its polished draft
+ROUGH NOTE (fictional): notice to colleagues from the Facilities Office. seminar hall 2 closed for maintenance friday 9 oct 2026, 2 to 5 pm. pls use room 105 instead. questions to Ms R. Example, Facilities Office. sorry for short notice
+
+POLISHED DRAFT (written for this exercise, deliberately imperfect): Dear colleagues, Please note that Seminar Hall 2 will be closed for maintenance on Friday, 9 October 2026, from 2 pm to 6 pm. Please use Room 150 instead. The hall will reopen on Monday. For questions, please contact Ms R. Example, Facilities Office. We apologise for the short notice. Facilities Office
+
+--- On your device: let the assistant list, you check
+“Above are a rough note and a polished draft. List every name, date, time, room and number in the draft. For each, quote the matching words of the rough note, or write NOT IN THE NOTE. Report only; do not rewrite the draft.”
+
+--- When an answer drifts: the emergency phrase
+“Stop. Show me only what the source document says.”
+
+============================================================
+TRAINING GROUNDS - drills with a text and a prompt
+
+--- From meeting notes to an action list
+NOTES, office meeting, 3 November 2027 (fictional). Orientation leaflets: the print office will deliver 500 copies by 10 November. Room for the workshop: still not booked - someone should ask Facilities. Website notice: the Training Office will draft it; no date agreed. Feedback form from last term: discuss next time.
+
+“From the notes above, make a numbered action list: action | owner | deadline. Use only what the notes say. If an owner or a deadline is missing, write NOT STATED. Do not add actions that the notes do not mention.”
+
+--- Your own best documents: same style, new facts
+PAST NOTICE (already public, fictional): Library closed on 18 September. The Central Library will be closed on Friday, 18 September 2026, for stock-taking. Books due on that day may be returned on Monday, 21 September, without a fine. Library Office
+
+NEW FACTS (fictional): computer lab 3 closed wednesday 14 oct 2026 for software updates. use lab 1 instead. IT Office
+
+“Above are a past public notice and new facts. Write the new notice in the same style and length as the past notice. Use only the new facts; do not change any date, room or name (you may write them out in full). If a detail is missing, write [TO BE CONFIRMED]; do not invent it.”
+
+--- A voice note becomes a task list
+TRANSCRIPT (fictional): ok so tomorrow, um, first I need to call the print office about the leaflets, then the budget sheet, that has to go to the manager by Thursday noon, and oh, I should book the projector for Friday's briefing, and maybe at some point tidy the shared folder
+
+“Above is a transcript of me thinking aloud. Turn it into a numbered task list. Mark anything that sounds like a deadline. Do not add tasks I did not mention.”
+
+--- Look before you calculate: a monthly table
+Student Services desk, requests in September 2027 (fictional)
+category | requests | resolved within 3 days
+Certificates | 120 | 96
+Fee queries | 80 | 60
+Timetable changes | 50 | 45
+ID cards |  | 30
+Fee queries | 80 | 60
+Hostel | 40 | 44
+
+“Above is a table of monthly figures. First, describe what the table contains and list any oddities (blanks, repeated rows, impossible values). Do NOT calculate anything yet.”
+
+--- The one-page summary: only numbers from the table
+Student Services desk, requests in September 2027 (fictional)
+category | requests | resolved within 3 days
+Certificates | 120 | 96
+Fee queries | 80 | 60
+Timetable changes | 50 | 45
+ID cards |  | 30
+Fee queries | 80 | 60
+Hostel | 40 | 44
+
+SUMMARY (written for this exercise, deliberately imperfect): (a) Student Services handled 370 requests in September and resolved 91% within three days. (b) There were 120 certificate requests, and 96 of them (80%) were resolved within three days. (c) All hostel requests were resolved on time. (d) Risk: fee queries are rising. (e) Next step: add one member of staff to the fee desk.
+
+“Above are a table and a summary. For each sentence of the summary, quote the table cells it rests on, or write NOT IN THE TABLE. Recalculate every total and percentage and show the arithmetic. Point out any row that looks wrong. Report only; do not rewrite the summary.”
