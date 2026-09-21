@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Acharya AI Dojo — research track</title>
+<style>
+:root{--navy:#14213D;--gold:#B8862B;--goldtext:#86600F;--paper:#FBF8F1;--beige:#F3EFE8;--mist:#EEF2F6;--grey:#5A6B84;--line:#D9D2C3;--ok:#2E6B4A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--navy);font:17px/1.55 -apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--navy)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header.top{background:var(--navy);color:#fff;padding:18px 0 14px}
+header.top h1{font-size:26px;margin:0;letter-spacing:.2px}
+header.top p{margin:4px 0 0;color:#D6DCE6;font-size:15px}
+.kanji{color:var(--gold);font-size:14px;letter-spacing:.3em}
+nav.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+nav.bar .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 8px}
+nav.bar a{flex:0 0 auto;padding:12px 9px;font-size:15px;font-weight:600;text-decoration:none;color:var(--navy);white-space:nowrap}
+.belt{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:6px;padding:10px 12px;margin:14px 0}
+.belt .chip{display:inline-block;flex:0 0 auto;white-space:nowrap;min-width:74px;text-align:center;font-weight:700;padding:4px 10px;border-radius:999px;border:2px solid var(--navy);background:#fff}
+.belt .chip.White{background:#fff}.belt .chip.Yellow{background:#F6D860}.belt .chip.Green{background:#7FB58A}.belt .chip.Brown{background:#9C6B3F;color:#fff}.belt .chip.Black{background:#111;color:#fff}
+.belt small{color:var(--grey);display:block}
+.master{display:flex;gap:12px;align-items:flex-end;margin:16px 0 6px}
+.master img{width:96px;height:auto;flex:0 0 auto}
+.bubble{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
+.bubble b{color:var(--goldtext)}
+.safe{background:var(--mist);border-left:5px solid var(--navy);padding:10px 12px;border-radius:4px;font-size:15.5px;margin:12px 0}
+h2{font-size:22px;margin:30px 0 6px;padding-top:8px;border-top:2px solid var(--gold)}
+h2[id]{scroll-margin-top:60px}
+h2 small{display:block;font-size:14px;color:var(--grey);font-weight:500}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;margin:12px 0;overflow:hidden}
+.card>summary{list-style:none;cursor:pointer;padding:14px;font-weight:700;font-size:18px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.card>summary::-webkit-details-marker{display:none}
+.card>summary>span:first-child{flex:1 1 auto}
+.card>summary::after{content:"+";flex:0 0 auto;width:20px;text-align:center;font-size:22px;line-height:1;color:var(--grey)}
+.card[open]>summary::after{content:"\2013"}
+.card>summary .tag{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--goldtext);border:1px solid var(--gold);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.card[open]>summary{border-bottom:1px solid var(--line);background:var(--beige)}
+.inner{padding:12px 14px 16px}
+.lead{margin:0 0 10px}
+.blk{margin:14px 0}
+.lbl{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--goldtext);margin-bottom:4px}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font:14.5px/1.5 ui-monospace,Consolas,"Courier New",monospace;background:#FAFAF8;border:1.5px solid var(--navy);border-radius:4px;padding:10px 12px}
+pre.src{border-color:var(--line);background:var(--beige);font-family:inherit;font-size:16px}
+button{font:inherit;cursor:pointer}
+.copy{margin-top:6px;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:10px 16px;font-weight:700;font-size:15px;min-height:44px}
+.copy.done{background:var(--ok)}
+.copy.alt{background:#fff;color:var(--navy);border:1.5px solid var(--navy);margin-left:6px}
+details.rev{margin:14px 0;border:1px dashed var(--gold);border-radius:6px;background:#FFFDF7}
+details.rev>summary{cursor:pointer;padding:12px;font-weight:700;color:var(--goldtext);min-height:44px}
+details.rev pre{border:0;background:transparent;font-family:inherit;font-size:16px;padding:0 12px 12px}
+.note{background:var(--beige);border-left:4px solid var(--gold);padding:10px 12px;border-radius:4px;font-size:15.5px}
+label.done{display:flex;gap:10px;align-items:center;margin-top:14px;padding:12px;border-radius:6px;background:var(--mist);font-weight:700;min-height:48px}
+label.done input{width:22px;height:22px;flex:0 0 auto}
+.muted{color:var(--grey)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.filters button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:8px 14px;font-weight:600;font-size:14.5px;min-height:44px}
+.filters button.on{background:var(--navy);color:#fff}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 14px 12px;margin:8px 0}
+ul.plain li>a{display:block;padding:10px 0}
+ul.plain li>br{display:none}
+ul.plain li>.muted{display:block}
+footer{margin:36px 0 0;background:var(--navy);color:#D6DCE6;padding:18px 0 28px;font-size:14.5px}
+footer a{color:#fff}
+footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-radius:6px;padding:10px 14px;min-height:44px;margin-top:8px}
+@media (min-width:700px){body{font-size:18px}header.top h1{font-size:32px}.master img{width:120px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="kanji">道場 · DOJO</div>
+  <h1>Acharya AI Dojo</h1>
+  <p>Research track · Japan Meets India AI Nexus 2026 · practise on your phone</p>
+</div></header>
+<nav class="bar"><div class="wrap"><a href="#missions">Missions</a><a href="#training">Drills</a><a href="#library">Library</a><a href="#about">About</a></div></nav>
+
+<main class="wrap">
+  <div class="master"><img src="assets/master.webp" alt="The dojo master, an old man holding a scroll" width="400" height="533">
+    <div class="bubble">Welcome. One rule in this dojo: the AI is your <b>critic</b> and your <b>drafter</b> — never your <b>witness</b>. It argues well. It testifies badly.</div></div>
+  <div class="belt" id="belt" aria-live="polite"></div>
+  <div class="safe" id="safe"></div>
+
+  <h2 id="missions">Today’s three missions<small>Pen first, phone second. Tap a mission. “Copy prompt + text” gives you both in one piece: paste it into the assistant you normally use, and send.</small></h2>
+  <div id="mlist"></div>
+  <p class="note" id="always"></p>
+
+  <h2 id="training">Training grounds<small>Short drills for after the session. All example material is fictional. Progress is kept only on this device.</small></h2>
+  <div class="filters" id="filters"></div>
+  <div id="dlist"></div>
+
+  <h2 id="library">Library</h2>
+  <ul class="plain">
+    <li><a href="assets/library/Day2_Source_pack.pdf"><b>Source pack (PDF, 2 pages)</b></a><br><span class="muted">The three fictional texts with tables to fill in, and every prompt from the session.</span></li>
+    <li><a href="assets/library/Day2_texts_and_prompts.txt"><b>Texts and prompts (plain text)</b></a><br><span class="muted">The same material as one text file, easy to copy from.</span></li>
+  </ul>
+  <h2>Books by the speaker<small>Disclosure: these are Akira Murata’s own books. Kindle editions on Amazon.in.</small></h2>
+  <ul class="plain"><li><a href='https://www.amazon.in/dp/B0HKG3PKRG' rel='noopener noreferrer' target='_blank'><b>The AI Token Economy</b></a><br><span class='muted'>Making Better Decisions about Quality, Cost and Time · India Special Edition</span></li><li><a href='https://www.amazon.in/dp/B0HK79Y7KK' rel='noopener noreferrer' target='_blank'><b>What Do Humans Add to AI’s Answers?</b></a><br><span class='muted'>Understanding and Judgement through Physics, Life Science and Social Simulation · India Special Edition</span></li><li><a href='https://www.amazon.in/dp/B0H86YMQG9' rel='noopener noreferrer' target='_blank'><b>Quantum Economics</b></a><br><span class='muted'>Foundations and Applications</span></li></ul>
+  <h2>Feedback</h2>
+  <ul class="plain"><li><a href="https://forms.gle/B1TFxA4Bhx6ZU7Zd9" rel="noopener noreferrer" target="_blank"><b>Session feedback form (2 minutes)</b></a><br><span class="muted">The speaker’s own form, separate from this page. It is anonymous unless you ask there for the free e-book. It is not a research study.</span></li></ul>
+
+  <h2 id="about">About this page</h2>
+  <p>A practice page made by Dr Akira Murata (Juntendo University, Japan; co-founder, Awesome AI Asia) for participants of <i>Japan Meets India AI Nexus 2026</i> at Acharya Institutes, Bengaluru. The name is used with the kind permission of the organisers. The page is run by Dr Murata, <b>not</b> by Acharya Institutes; it is not an official service of the institute, and it says nothing about what any particular AI tool can do.</p>
+  <p><b>Privacy:</b> this page has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
+  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 1.0, 22 September 2026</p>
+</main>
+<footer><div class="wrap">AI drafts and criticises. You verify, decide and sign.<br><button id="reset" type="button">Reset my progress on this device</button></div></footer>
+
+<script>
+(function(){
+  var DATA = {"missions": [{"id": "m1", "belt": "White → Yellow", "title": "Mission 1 · Read with the page in your hand", "lead": "A headline and the paper behind it. Pen first: for each claim in the news item, find the sentence, the page and your verdict. Then let an assistant try.", "blocks": [{"kind": "text", "label": "Fictional example · Text 1 and Text 2", "body": "TEXT 1 - news item (Plant Tech Weekly, fictional): “A new study proves that AI vibration alerts cut unplanned stoppages by 40% in factories across the country, and lower maintenance costs.”\n\nTEXT 2 - excerpts from the paper, 'Study V' (fictional)\np.2: “We observed 212 pump motors at one plant for six months. Line A (108 motors) had the vibration-alert system. Line B (104 motors) did not. Lines were assigned by the maintenance schedule, not at random.”\np.5: “On Line A, 30 of 108 motors had at least one unplanned stoppage. On Line B, 48 of 104 did.”\np.7: “The two lines make different products and run different shifts, and we cannot rule out that this explains part of the gap. We did not collect cost data. Results from one plant may not apply elsewhere.”"}, {"kind": "prompt", "label": "First, the lazy question (watch what a fluent answer hides)", "body": "“Summarise this study and tell me if vibration alerts work.”", "with": "TEXT 1 - news item (Plant Tech Weekly, fictional): “A new study proves that AI vibration alerts cut unplanned stoppages by 40% in factories across the country, and lower maintenance costs.”\n\nTEXT 2 - excerpts from the paper, 'Study V' (fictional)\np.2: “We observed 212 pump motors at one plant for six months. Line A (108 motors) had the vibration-alert system. Line B (104 motors) did not. Lines were assigned by the maintenance schedule, not at random.”\np.5: “On Line A, 30 of 108 motors had at least one unplanned stoppage. On Line B, 48 of 104 did.”\np.7: “The two lines make different products and run different shifts, and we cannot rule out that this explains part of the gap. We did not collect cost data. Results from one plant may not apply elsewhere.”"}, {"kind": "prompt", "label": "Same assistant, better question: quote, page, verdict", "body": "“Below are a news item and excerpts from the paper it reports. List every factual claim in the news item, numbered. Then, using ONLY the paper excerpts, fill a table: claim | supporting quote, copied word for word | page | verdict: SUPPORTED, OVERSTATED or NOT STATED. If no sentence supports a claim, write NOT STATED. Do not use outside knowledge.”", "with": "TEXT 1 - news item (Plant Tech Weekly, fictional): “A new study proves that AI vibration alerts cut unplanned stoppages by 40% in factories across the country, and lower maintenance costs.”\n\nTEXT 2 - excerpts from the paper, 'Study V' (fictional)\np.2: “We observed 212 pump motors at one plant for six months. Line A (108 motors) had the vibration-alert system. Line B (104 motors) did not. Lines were assigned by the maintenance schedule, not at random.”\np.5: “On Line A, 30 of 108 motors had at least one unplanned stoppage. On Line B, 48 of 104 did.”\np.7: “The two lines make different products and run different shifts, and we cannot rule out that this explains part of the gap. We did not collect cost data. Results from one plant may not apply elsewhere.”"}, {"kind": "reveal", "label": "What you should get", "body": "1  “proves” - OVERSTATED (p.7: “we cannot rule out …”)\n2  “by 40%” - SUPPORTED as arithmetic, as a relative change (p.5: 30 of 108 v 48 of 104); the causal verb “cut” falls under 1\n3  “across the country” - NOT STATED (p.2: “one plant”)\n4  “lower … costs” - NOT STATED (p.7: “We did not collect cost data.”)\n\n46.2% → 27.8% is a fall of 18.4 percentage points, which is 39.8% in relative terms. Both headlines are true. Never accept a percentage without its two raw counts.\n\nThe assistant did not get smarter between the two prompts. Your question did: it had an honest exit - “write NOT STATED”."}, {"kind": "prompt", "label": "Never ask for references from memory - ask for a tracing plan", "body": "“A magazine says: ‘AI vibration alerts cut unplanned stoppages by 40%.’ I cannot cite a magazine. Do NOT give me references from memory. Give me: (1) five search strings for a scholarly database; (2) what the primary paper must report for this number to be true; (3) three ways the number may have changed on its way to the magazine.”"}, {"kind": "note", "body": "Grade every source when you save it: PRIMARY (reports its own data and method) · OWN CLAIM (someone describing their own product or result) · SECONDARY (reports someone else’s finding). A secondary source is a signpost, never the source of a number. And you open every reference yourself: existence is never delegated."}]}, {"id": "m2", "belt": "Yellow → Green", "title": "Mission 2 · One run builds, a second run attacks", "lead": "A study plan with one serious problem planted in it. Reviewer A objects. Reviewer B - a fresh chat, or your neighbour’s phone - tries to refute A. You keep what survives.", "blocks": [{"kind": "text", "label": "Fictional example · Plan V", "body": "“We will offer the alert system to all plants of three partner companies next year. Plants that choose to install it form the treatment group; plants that do not form the comparison group. Outcome: unplanned stoppages per motor, from maintenance logs. We expect the system to reduce stoppages and will then recommend it to all plants.”"}, {"kind": "prompt", "label": "Run A - the referee who states assumptions first", "body": "“Act as a rigorous but fair peer reviewer of my study plan below. FIRST: state three assumptions you are making about my study. THEN: give your three strongest objections, numbered. For each, say what evidence would change your mind.”", "with": "STUDY PLAN: “We will offer the alert system to all plants of three partner companies next year. Plants that choose to install it form the treatment group; plants that do not form the comparison group. Outcome: unplanned stoppages per motor, from maintenance logs. We expect the system to reduce stoppages and will then recommend it to all plants.”"}, {"kind": "prompt", "label": "Run B - the independent second reviewer (fresh chat or second phone)", "body": "“You are an independent second reviewer. Below are a study plan and another reviewer’s three objections. Try to REFUTE each objection: say where it misreads the plan, assumes something the plan does not say, or asks for the impossible. If you cannot refute one, write STANDS and give the reason in one sentence.”", "with": "STUDY PLAN: “We will offer the alert system to all plants of three partner companies next year. Plants that choose to install it form the treatment group; plants that do not form the comparison group. Outcome: unplanned stoppages per motor, from maintenance logs. We expect the system to reduce stoppages and will then recommend it to all plants.”\n\nREVIEWER A’S THREE OBJECTIONS: [paste them here]"}, {"kind": "reveal", "label": "What to expect", "body": "The planted problem is self-selection: plants that choose to install the system differ from those that do not, so the comparison is not fair.\nExpect that objection to STAND. Generic objections (“no long-term follow-up”) are often REFUTED as outside the plan’s stated aim.\n\nTwo AI runs are not proof. They are two critics. You are the editor: STANDS, WEAKENED or REFUTED is your call - overrule at least one row."}, {"kind": "prompt", "label": "Log the decision - the file is the memory", "body": "“For each objection marked STANDS, propose the smallest change to the plan, and one sentence for the limitations section if I cannot make the change. Then write a five-line DECISIONS entry with today’s date: what we kept, what we dropped, and why.”"}]}, {"id": "m3", "belt": "Green → Brown", "title": "Mission 3 · The 15-minute audit before you submit", "lead": "Six errors are planted in this extract. Pen only, four minutes: how many can you find? Then run one narrow pass at a time.", "blocks": [{"kind": "text", "label": "Fictional manuscript extract (the reference names are artificial)", "body": "ABSTRACT. We study vibration alerts on 221 pump motors. Alerts caused a fall of 18.4% in unplanned stoppages.\nMETHODS. Lines were assigned by the maintenance schedule, not at random.\nRESULTS. On Line A, 28.7% of motors had an unplanned stoppage, against 46.2% on Line B (Table 1). This confirms earlier findings (Gamma 2021; Alpha and Beta 2019).\nTABLE 1. Line A: motors 108, stopped 30, 27.8%. Line B: motors 104, stopped 48, 46.2%. Total motors 212.\nREFERENCES. Alpha and Beta (2019). Delta (2020)."}, {"kind": "prompt", "label": "Pass 1 - every number meets its table", "body": "“Audit the extract below. List every number and every quantity word (most, few, significant) in the abstract and text. For each, find the matching number in Table 1 and mark MATCH, MISMATCH or NOT IN TABLE. Recalculate every percentage from the raw counts and show the arithmetic. Report only; do not correct or rewrite anything.”", "with": "ABSTRACT. We study vibration alerts on 221 pump motors. Alerts caused a fall of 18.4% in unplanned stoppages.\nMETHODS. Lines were assigned by the maintenance schedule, not at random.\nRESULTS. On Line A, 28.7% of motors had an unplanned stoppage, against 46.2% on Line B (Table 1). This confirms earlier findings (Gamma 2021; Alpha and Beta 2019).\nTABLE 1. Line A: motors 108, stopped 30, 27.8%. Line B: motors 104, stopped 48, 46.2%. Total motors 212.\nREFERENCES. Alpha and Beta (2019). Delta (2020)."}, {"kind": "prompt", "label": "Pass 2 - citations against the reference list", "body": "“Now check citations only. List every in-text citation and every entry in the reference list. Mark each: CITED AND LISTED, CITED BUT NOT LISTED, or LISTED BUT NEVER CITED. Do not judge whether the references are real and do not add or complete any. I will open each one myself.”"}, {"kind": "prompt", "label": "Pass 3 - every causal verb meets its design", "body": "“First, state the study design in one sentence, quoting the methods text. Then list every verb or phrase that implies causation or proof (caused, led to, confirms, proves). For each, say whether this design can support it, and give the strongest wording that is still true.”"}, {"kind": "reveal", "label": "The six", "body": "1  221 motors (abstract)   v   212 (Table 1)\n2  28.7% (text)   v   27.8% (Table 1)\n3  “a fall of 18.4%”  =  18.4 points (39.8% relative)\n4  “caused”, “confirms”   v   “not at random”\n5  Gamma 2021: cited, but not in the reference list\n6  Delta (2020): listed, but never cited\n\nIf you counted seven: “caused” and “confirms” are one error in two places - both claim more than a non-random design allows."}, {"kind": "prompt", "label": "Pass 4 - audit the audit, in a fresh chat", "body": "“Another assistant audited the extract below and produced these findings. Check each finding against the extract. Mark it CONFIRMED or FALSE ALARM, quoting the exact text. Then list anything the first audit missed.”", "with": "ABSTRACT. We study vibration alerts on 221 pump motors. Alerts caused a fall of 18.4% in unplanned stoppages.\nMETHODS. Lines were assigned by the maintenance schedule, not at random.\nRESULTS. On Line A, 28.7% of motors had an unplanned stoppage, against 46.2% on Line B (Table 1). This confirms earlier findings (Gamma 2021; Alpha and Beta 2019).\nTABLE 1. Line A: motors 108, stopped 30, 27.8%. Line B: motors 104, stopped 48, 46.2%. Total motors 212.\nREFERENCES. Alpha and Beta (2019). Delta (2020).\n\nTHE FIRST AUDIT’S FINDINGS: [paste them here]"}]}], "drills": [{"id": "d1", "belt": "White", "min": 3, "title": "Percent, or percentage points?", "task": "No assistant needed. A failure rate falls from 12.5% to 10.0%. Write two true headlines, one in percentage points and one as a relative change.", "reveal": "“Failures fell by 2.5 percentage points.” and “Failures fell by 20%.” (2.5 ÷ 12.5 = 0.20). Both are true; a careful author says which one she means - and gives the two raw counts."}, {"id": "d2", "belt": "White", "min": 5, "title": "Grade five sources", "text": "1. A magazine column: “Studies show predictive maintenance cuts downtime by 30%.”\n2. The brochure of ‘Company Z’, a fictional sensor maker: “Our sensors cut downtime by half at partner plants.”\n3. A journal article reporting a randomised trial at four plants.\n4. A review article summarising twelve studies.\n5. A plant’s own annual report describing the success of its maintenance programme.", "prompt": "“Below are five sources I plan to cite. Grade each: PRIMARY (reports its own data and method), OWN CLAIM (an organisation describing its own product or programme) or SECONDARY (reports someone else’s finding). For each OWN CLAIM or SECONDARY, say what primary source I must find before I cite its number. Do not invent titles or authors.”", "reveal": "1 SECONDARY · 2 OWN CLAIM · 3 PRIMARY · 4 SECONDARY for any single study’s number (primary only for its own synthesis) · 5 OWN CLAIM. A number from an OWN CLAIM source may be quoted only as “the company reports …”, never as a finding."}, {"id": "d3", "belt": "White", "min": 5, "title": "A tracing plan for a number you met this week", "task": "Take one statistic from a news item, a blog or a talk. Replace the sentence in quotation marks with yours.", "prompt": "“A magazine says: ‘AI vibration alerts cut unplanned stoppages by 40%.’ I cannot cite a magazine. Do NOT give me references from memory. Give me: (1) five search strings for a scholarly database; (2) what the primary paper must report for this number to be true; (3) three ways the number may have changed on its way to the magazine.”", "reveal": "Part (3) is the useful one: when you finally open the primary paper, you already know which three things to check. If you cannot reach the primary source, the number does not enter your manuscript."}, {"id": "d4", "belt": "White", "min": 8, "title": "One published abstract, one honest table", "task": "Choose a published abstract in your own field (public text). Paste it after the prompt.", "prompt": "“Using ONLY the abstract below, fill a table: question | design | sample | main finding | limitation stated by the authors. Copy the supporting words exactly. If the abstract does not state something, write NOT STATED. Add nothing from your own knowledge.”", "reveal": "The NOT STATED cells are the most useful output: they are your reading list for the full paper. Check two of the copied phrases against the abstract; if one is not there word for word, distrust the whole table."}, {"id": "d5", "belt": "Yellow", "min": 8, "title": "Referee for an algorithm paper", "text": "“We will evaluate our new fault-detection algorithm on the public data set that we also used to tune its parameters. We will report its accuracy and compare it with two published methods, using the accuracy figures printed in their papers. We expect our method to be superior and will then recommend it for deployment.”", "prompt": "“Act as a rigorous but fair peer reviewer of my study plan below. FIRST: state three assumptions you are making about my study. THEN: give your three strongest objections, numbered. For each, say what evidence would change your mind.”", "reveal": "Planted: the method is tuned and tested on the same data (no held-out set); it is compared with figures printed in other papers, which were obtained under different conditions; and “superior … recommend for deployment” claims more than one benchmark can support. Now run the refuter on whatever your referee said."}, {"id": "d6", "belt": "Yellow", "min": 5, "title": "Run it twice", "task": "Run the referee prompt on Plan V twice, in two fresh chats (or on two phones). Mark the objections that appear both times.", "prompt": "“Act as a rigorous but fair peer reviewer of my study plan below. FIRST: state three assumptions you are making about my study. THEN: give your three strongest objections, numbered. For each, say what evidence would change your mind.”", "reveal": "An AI answer is a sample, not the answer. Objections that repeat deserve more weight; an objection that appears once deserves a second look, not automatic belief."}, {"id": "d7", "belt": "Green", "min": 8, "title": "Find the problems: Project KITE", "text": "PARAGRAPH: “Thirteen participants completed the survey. Among the four participants with complete data, the mean self-rating rose from 2.75 to 3.35, an increase of 0.50 points (18%). Most participants improved. These results prove that the workshop raised research productivity, and the effect was highly significant.”\n\nTABLE 1: rows read 13 (two rows per person, plus one duplicate) | people 6 | removed: one duplicate row | excluded: two people (one post-rating missing; one post-rating = 7, outside the 1-5 scale) | complete pairs 4 | pre mean 2.75 | post mean 3.25 | mean change 0.50 | improved 2 of 4 | statistical test: none run", "prompt": "“Audit the extract below. List every number and every quantity word (most, few, significant) in the abstract and text. For each, find the matching number in Table 1 and mark MATCH, MISMATCH or NOT IN TABLE. Recalculate every percentage from the raw counts and show the arithmetic. Report only; do not correct or rewrite anything.”", "reveal": "1  “Thirteen participants” - 13 rows, but 6 people.\n2  3.35 in the text v 3.25 in the table.\n3  18% is CORRECT (0.50 ÷ 2.75) - a true item, planted to see who ‘corrects’ it.\n4  “Most … improved” v 2 of 4.\n5  “prove … raised research productivity” - one group, no comparison; and productivity was never measured (a 1-5 self-rating was).\n6  “highly significant” - no test was run.\n7  The text never says that two of the six people were excluded, or why."}, {"id": "d8", "belt": "Green", "min": 6, "title": "Describe first, calculate second", "text": "Self-ratings, pre and post, on a scale from 1 to 5.\n\nid,lab,pre,post\nF01,A,3,4\nF02,A,2,3\nF03,B,4,4\nF04,B,2,2\nF05,A,3,\nF06,B,2,7\nF07,A,99,4\nF08,B,3,4\nF08,B,3,4\nF09,A,4,5", "prompt": "“Here is a dataset. Do NOT analyse it yet. First: describe the variables, count missing values, and list anything suspicious - duplicated rows, impossible values, codes that look like placeholders. Then STOP and wait.”", "reveal": "Four traps: F05 has no post value; F06 has post = 7 on a 1-5 scale; F07 has pre = 99, a placeholder code; F08 appears twice. Then ask: “What is the denominator, exactly?” - improved is 4 of the 6 complete, valid pairs (67%); a careless count over all 10 rows gives 6 of 10."}, {"id": "d9", "belt": "Green", "min": 5, "title": "An edit list, not a rewrite", "text": "“Our results suggest that the vibration alerts are associated to less unplanned stoppages in this plant. Because the lines were not assigned at random, other differences of the lines may explain a part of the gap.”", "prompt": "“Give me an edit list, not a rewrite: my original words | suggested words | reason in one line. Maximum ten edits. Keep my voice and my sentence order. Do not make any claim stronger.”", "reveal": "1  associated to less   →   associated with fewer\n2  in this plant   →   at this plant\n3  differences of the lines   →   differences between the lines\n4  a part of the gap   →   part of the gap\n\nNone of these makes the claim stronger. A full rewrite often does: watch for “suggest” becoming “demonstrate”, and for a limitation that quietly disappears. The edit list is also your record of what the tool did."}, {"id": "d10", "belt": "Brown", "min": 10, "title": "Pre-mortem", "task": "Use Plan V, or a two-line outline of your own project - no unpublished data or text.", "prompt": "“My study plan is below. Imagine it is one year later and the study failed. FIRST state three assumptions you are making. THEN give the five most likely failure causes, ranked, each with one early-warning sign I could watch for.”", "reveal": "Pick the one failure cause that worries you most and write its early-warning sign in your calendar, with a real date. Cheap to ask now; expensive to discover later."}, {"id": "d11", "belt": "Brown", "min": 5, "title": "One working file: OPEN and CLOSE", "task": "Keep one working file per project. Start every session with OPEN and end it with CLOSE. Keep unpublished data and personal details out of the file unless your institution’s rules allow them.", "prompt": "OPEN: “Read the working file below. Continue from the section marked NEXT. Change nothing above it.”\n\nCLOSE: “Summarise what we decided today in five lines and append them to the file under DECISIONS.”", "reveal": "The file is the memory; the assistants are visitors. Next week any assistant, co-author or supervisor can resume from the file, not from your memory of a chat."}, {"id": "d12", "belt": "Brown", "min": 5, "title": "Code, not results", "task": "For empirical work, never ask an assistant for the numbers. Ask for something you can rerun.", "prompt": "“Do not give me results. Write commented code (Python, R or MATLAB — or step-by-step spreadsheet formulas) that reproduces Table 1 from a file with two columns, line and stopped, and prints rows read and rows removed. Then list five robustness checks a referee would ask for.”", "reveal": "A number from a chat cannot be rerun. Code can be rerun by you, your co-author and the referee. Keep one tiny data set with a hand-computed answer to test every script."}, {"id": "d13", "belt": "Brown", "min": 3, "title": "Your disclosure sentence", "task": "Adapt this template to your journal’s policy - and read that policy.", "prompt": "“[Tool name] was used for [drafting / critique / translation / data checking]; all analyses, interpretations and final text were verified by the authors.”", "reveal": "Three tasks are never delegated: verifying that a citation exists, approving the final interpretation of results, and deciding what data may leave the building. Sign your work: “AI-assisted, verified by [your name]”."}], "always": "Add to every research prompt:  “Do not invent references; where a source is needed, write SOURCE NEEDED.”", "safe": "Paste only the fictional texts on this page, or text that is already public. For your own drafts, check your institution’s rules first — and if you are a student, agree with your supervisor what is allowed."};
+  var KEY = 'acharya_ai_dojo_v1', state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  if (!state || typeof state !== 'object' || state instanceof Array) { state = {}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function el(tag, cls, text){ var x = document.createElement(tag); if (cls) x.className = cls; if (text != null) x.textContent = text; return x; }
+  function copyBtn(text, cap, alt){
+    cap = cap || 'Copy';
+    var b = el('button', alt ? 'copy alt' : 'copy', cap); b.type = 'button';
+    b.addEventListener('click', function(){
+      function ok(){ b.textContent = 'Copied ✓'; b.classList.add('done'); setTimeout(function(){ b.textContent = cap; b.classList.remove('done'); }, 1800); }
+      function fallback(){ var t = document.createElement('textarea'), good = false; t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.top = '0'; t.style.left = '0'; t.style.opacity = '0'; t.style.fontSize = '16px'; document.body.appendChild(t); t.focus(); t.select(); try { t.setSelectionRange(0, text.length); } catch (e) {} try { good = document.execCommand('copy'); } catch (e) { good = false; } document.body.removeChild(t); if (good) { ok(); } else { b.textContent = 'Press and hold the text to copy'; setTimeout(function(){ b.textContent = cap; }, 3000); } }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+    });
+    return b;
+  }
+  function block(kind, label, body, extra){
+    var d = el('div', 'blk');
+    if (kind === 'note') { d.appendChild(el('div', 'note', body)); return d; }
+    if (kind === 'reveal') { var r = el('details', 'rev'); r.appendChild(el('summary', null, 'Tap to show · ' + label)); r.appendChild(el('pre', null, body)); d.appendChild(r); return d; }
+    d.appendChild(el('div', 'lbl', label));
+    d.appendChild(el('pre', kind === 'text' ? 'src' : null, body));
+    if (extra) { d.appendChild(copyBtn(body + '\n\n' + extra, 'Copy prompt + text')); d.appendChild(copyBtn(body, 'Prompt only', true)); }
+    else { d.appendChild(copyBtn(body)); }
+    return d;
+  }
+  function doneBox(id, text){
+    var l = el('label', 'done'), c = document.createElement('input'), s2 = el('span', null, text); c.type = 'checkbox'; c.checked = !!state[id];
+    c.addEventListener('change', function(){ state[id] = c.checked; save(); belt(); s2.textContent = c.checked ? text + ' - saved. See your belt at the top.' : text; });
+    l.appendChild(c); l.appendChild(s2); return l;
+  }
+  function belt(){
+    var m = DATA.missions.filter(function(x){ return state[x.id]; }).length;
+    var d = DATA.drills.filter(function(x){ return state[x.id]; }).length;
+    var name = 'White', next = 'Tick your first finished mission to earn the Yellow belt.';
+    if (m >= 1) { name = 'Yellow'; next = 'Tick a second mission to earn the Green belt.'; }
+    if (m >= 2) { name = 'Green'; next = 'Tick all three missions to earn the Brown belt.'; }
+    if (m >= 3) { name = 'Brown'; next = 'Six drills in the training grounds earn the Black belt (' + Math.min(d, 6) + ' of 6).'; }
+    if (m >= 3 && d >= 6) { name = 'Black'; next = 'Now teach one mission to your own lab. That is how it stays.'; }
+    var b = document.getElementById('belt'); b.innerHTML = '';
+    b.appendChild(el('span', 'chip ' + name, name + ' belt'));
+    var t = el('div'); t.appendChild(el('b', null, 'Your path: ' + m + ' of 3 missions · ' + d + ' of ' + DATA.drills.length + ' drills')); t.appendChild(el('small', null, next)); b.appendChild(t);
+  }
+  document.getElementById('safe').textContent = 'Before you paste anything: ' + DATA.safe;
+  document.getElementById('always').textContent = DATA.always;
+  var ml = document.getElementById('mlist');
+  DATA.missions.forEach(function(m, i){
+    var c = el('details', 'card'); if (i === 0) c.open = true;
+    var s = el('summary'); s.appendChild(el('span', null, m.title)); s.appendChild(el('span', 'tag', m.belt)); c.appendChild(s);
+    var inner = el('div', 'inner'); inner.appendChild(el('p', 'lead', m.lead));
+    m.blocks.forEach(function(b){ inner.appendChild(block(b.kind, b.label, b.body, b['with'])); });
+    inner.appendChild(doneBox(m.id, 'I have done this mission')); c.appendChild(inner); ml.appendChild(c);
+  });
+  var filter = 'All', fl = document.getElementById('filters'), dl = document.getElementById('dlist');
+  function drills(){
+    dl.innerHTML = '';
+    DATA.drills.filter(function(x){ return filter === 'All' || x.belt === filter; }).forEach(function(x){
+      var c = el('details', 'card'), s = el('summary'); s.appendChild(el('span', null, x.title)); s.appendChild(el('span', 'tag', x.belt + ' · ' + x.min + ' min')); c.appendChild(s);
+      var inner = el('div', 'inner');
+      if (x.task) inner.appendChild(el('p', 'lead', x.task));
+      if (x.text) inner.appendChild(block('text', 'Fictional example', x.text));
+      if (x.prompt) inner.appendChild(block('prompt', 'The prompt', x.prompt, x.text));
+      if (x.reveal) inner.appendChild(block('reveal', 'the answer and the point', x.reveal));
+      inner.appendChild(doneBox(x.id, 'Done')); c.appendChild(inner); dl.appendChild(c);
+    });
+  }
+  ['All', 'White', 'Yellow', 'Green', 'Brown'].forEach(function(n){
+    var b = el('button', n === filter ? 'on' : null, n); b.type = 'button';
+    b.addEventListener('click', function(){ filter = n; Array.prototype.forEach.call(fl.children, function(k){ k.className = k.textContent === n ? 'on' : ''; }); drills(); });
+    fl.appendChild(b);
+  });
+  document.getElementById('reset').addEventListener('click', function(){ if (confirm('Clear your ticks on this device?')) { state = {}; save(); location.reload(); } });
+  drills(); belt();
+})();
+</script>
+</body>
+</html>

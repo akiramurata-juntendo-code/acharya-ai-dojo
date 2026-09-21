@@ -1,0 +1,58 @@
+DAY 2 - PASTE SHEET (all fictional). AI Tools for the Research Workflow, 22 Sept 2026
+
+=== TEXT 1 (news item, Plant Tech Weekly)
+“A new study proves that AI vibration alerts cut unplanned stoppages by 40% in factories across the country, and lower maintenance costs.”
+
+=== TEXT 2 (the paper, Study V)
+p.2: “We observed 212 pump motors at one plant for six months. Line A (108 motors) had the vibration-alert system. Line B (104 motors) did not. Lines were assigned by the maintenance schedule, not at random.”
+p.5: “On Line A, 30 of 108 motors had at least one unplanned stoppage. On Line B, 48 of 104 did.”
+p.7: “The two lines make different products and run different shifts, and we cannot rule out that this explains part of the gap. We did not collect cost data. Results from one plant may not apply elsewhere.”
+
+=== PLAN V
+“We will offer the alert system to all plants of three partner companies next year. Plants that choose to install it form the treatment group; plants that do not form the comparison group. Outcome: unplanned stoppages per motor, from maintenance logs. We expect the system to reduce stoppages and will then recommend it to all plants.”
+
+=== MANUSCRIPT EXTRACT (six planted errors)
+ABSTRACT. We study vibration alerts on 221 pump motors. Alerts caused a fall of 18.4% in unplanned stoppages.
+METHODS. Lines were assigned by the maintenance schedule, not at random.
+RESULTS. On Line A, 28.7% of motors had an unplanned stoppage, against 46.2% on Line B (Table 1). This confirms earlier findings (Gamma 2021; Alpha and Beta 2019).
+TABLE 1. Line A: motors 108, stopped 30, 27.8%. Line B: motors 104, stopped 48, 46.2%. Total motors 212.
+REFERENCES. Alpha and Beta (2019). Delta (2020).
+
+=== PROMPTS
+--- lazy
+“Summarise this study and tell me if vibration alerts work.”
+
+--- page
+“Below are a news item and excerpts from the paper it reports. List every factual claim in the news item, numbered. Then, using ONLY the paper excerpts, fill a table: claim | supporting quote, copied word for word | page | verdict: SUPPORTED, OVERSTATED or NOT STATED. If no sentence supports a claim, write NOT STATED. Do not use outside knowledge.”
+
+--- trace
+“A magazine says: ‘AI vibration alerts cut unplanned stoppages by 40%.’ I cannot cite a magazine. Do NOT give me references from memory. Give me: (1) five search strings for a scholarly database; (2) what the primary paper must report for this number to be true; (3) three ways the number may have changed on its way to the magazine.”
+
+--- referee
+“Act as a rigorous but fair peer reviewer of my study plan below. FIRST: state three assumptions you are making about my study. THEN: give your three strongest objections, numbered. For each, say what evidence would change your mind.”
+
+--- refute
+“You are an independent second reviewer. Below are a study plan and another reviewer’s three objections. Try to REFUTE each objection: say where it misreads the plan, assumes something the plan does not say, or asks for the impossible. If you cannot refute one, write STANDS and give the reason in one sentence.”
+
+--- decisions
+“For each objection marked STANDS, propose the smallest change to the plan, and one sentence for the limitations section if I cannot make the change. Then write a five-line DECISIONS entry with today’s date: what we kept, what we dropped, and why.”
+
+--- pass1
+“Audit the extract below. List every number and every quantity word (most, few, significant) in the abstract and text. For each, find the matching number in Table 1 and mark MATCH, MISMATCH or NOT IN TABLE. Recalculate every percentage from the raw counts and show the arithmetic. Report only; do not correct or rewrite anything.”
+
+--- pass2
+“Now check citations only. List every in-text citation and every entry in the reference list. Mark each: CITED AND LISTED, CITED BUT NOT LISTED, or LISTED BUT NEVER CITED. Do not judge whether the references are real and do not add or complete any. I will open each one myself.”
+
+--- pass3
+“First, state the study design in one sentence, quoting the methods text. Then list every verb or phrase that implies causation or proof (caused, led to, confirms, proves). For each, say whether this design can support it, and give the strongest wording that is still true.”
+
+--- pass4
+“Another assistant audited the extract below and produced these findings. Check each finding against the extract. Mark it CONFIRMED or FALSE ALARM, quoting the exact text. Then list anything the first audit missed.”
+
+--- editlist
+“Give me an edit list, not a rewrite: my original words | suggested words | reason in one line. Maximum ten edits. Keep my voice and my sentence order. Do not make any claim stronger.”
+
+--- code
+“Do not give me results. Write commented code (Python, R or MATLAB — or step-by-step spreadsheet formulas) that reproduces Table 1 from a file with two columns, line and stopped, and prints rows read and rows removed. Then list five robustness checks a referee would ask for.”
+
+Add to every research prompt:  “Do not invent references; where a source is needed, write SOURCE NEEDED.”
