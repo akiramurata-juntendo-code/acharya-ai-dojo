@@ -1,0 +1,58 @@
+ACHARYA AI DOJO - STUDENT TRACK - texts and prompts (all fictional)
+
+============================================================
+Mission 1 · Is it useful? Write the checklist before you ask
+
+--- Fictional brief, source table and AI draft
+BRIEF (supervisor at Company Z to Student A): Summarise our customer survey for Friday's meeting. 100 words at most. Give the three results as percentages. End with ONE recommendation. Do not mention any individual customer.
+
+SURVEY TABLE: 80 customers answered. Satisfied 52. Neutral 20. Dissatisfied 8.
+
+AI DRAFT: Company Z surveyed 80 customers. A strong 70% were satisfied, 25% were neutral and only 5% were dissatisfied. Customer K praised the fast delivery. We recommend keeping delivery times short and launching a loyalty scheme. Overall, the survey shows that customers are growing happier every year.
+
+--- On your phone: let the assistant be the critic
+Below are a brief, a source table and a draft. First list the acceptance criteria stated in the brief, numbered. Then check the draft against each criterion and against the table: PASS or FAIL, quoting the exact words of the draft. Recompute each percentage and show the division. If something cannot be checked from the text, write NOT STATED. Do not rewrite the draft.
+
+--- For your own work: be interviewed into a checklist
+Before I ask an AI for help with a task, interview me. Ask up to five questions, one at a time, and turn my answers into an acceptance checklist of 4 to 6 items that two different people would tick the same way. For each item, say who checks it and against what source. Do not start the task itself.
+
+============================================================
+Mission 2 · May I paste this?
+
+--- Eight things on your screen (fictional)
+You are an intern at Company Z. Eight things are open on your screen:
+A. The product description on Company Z's public website.
+B. A spreadsheet of 40 customers: names, phone numbers, order totals.
+C. Next quarter's price list, marked 'not yet announced'.
+D. Your own notes on how to structure a presentation - no names, no figures.
+E. A manager's appraisal comment about a colleague, sent to you by mistake.
+F. Meeting minutes saying which supplier will be dropped.
+G. A press release Company Z published last month.
+H. A classmate's project report, shared with you for feedback.
+
+--- Ticket 118 (fictional)
+TICKET 118 (internal). Customer K ordered 12 units at 250 credits each and received 9. She asks for a refund for the missing units. The ticket shows her full name, phone number and home address. Company Z's internal policy note says: refunds above 500 credits need a manager's approval before anything is promised. Your task: send her a polite holding reply today.
+
+--- Phone: the placeholder version
+Draft a polite holding reply, under 80 words, to a customer who received fewer units than ordered and has asked for a refund for the missing units. Say that we are checking and will reply by [DATE]. Do not promise a refund. Use the placeholders [NAME] and [DATE]. Do not invent any facts, policies or figures.
+
+============================================================
+Mission 3 · What next? Set a stop rule before the first prompt
+
+--- Fictional prompt log
+Student C needs a slide title and three bullet points. Before starting, C wrote: 'By hand: 15 minutes.' C's checklist has 5 items. The log:
+
+Attempt 1 - 4 min - 2 of 5 pass.
+Attempt 2 - 4 min - 3 of 5 pass.
+Attempt 3 - 5 min - 4 of 5 pass.
+Attempt 4 - 5 min - 3 of 5 pass (a new error appeared).
+Attempt 5 - 6 min - 4 of 5 pass.
+Attempt 6 - 6 min - 4 of 5 pass.
+
+In attempts 3, 5 and 6 the failing item was the same one. C then fixed it by hand in 3 minutes.
+
+--- On your phone: check the log
+Below is a fictional prompt log. 1) Add up the minutes and show the sum. 2) Give the running total after each attempt. 3) Name the FIRST attempt that reached the best score. 4) Add up the minutes of the attempts that came after it (leave out the hand fix). 5) Compare the grand total, hand fix included, with the by-hand estimate. Use only numbers in the text; if one is missing, write NOT STATED. Give no advice.
+
+--- For your own work: make the assistant keep your rule
+Work under my stop rule. My task, in one line: [TASK - no personal data, no assignment or exam material]. My checklist: [3 to 5 ITEMS]. After each draft, score it against the checklist, quoting the words that pass or fail. If a draft scores no better than the one before, write 'STOP - fix by hand' and list only the failing items. Never claim a pass you cannot quote.
