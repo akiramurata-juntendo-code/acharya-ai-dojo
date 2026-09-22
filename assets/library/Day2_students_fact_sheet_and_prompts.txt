@@ -1,0 +1,26 @@
+ACHARYA AI DOJO - STUDENTS' SESSION, 22 SEPTEMBER 2026 - FACT SHEET AND PROMPTS (copy, do not type)
+
+=== FACT SHEET (the only facts you may use; the number is the line number)
+1  Speaker: Dr Akira Murata, Juntendo University, Japan.
+2  Co-founder of Awesome AI Asia, which publishes as Awesome Books Asia.
+3  Series: India Special Edition · Kindle editions on Amazon.in · author Akira Murata.
+4  The AI Token Economy — Making Better Decisions about Quality, Cost and Time.
+5  What Do Humans Add to AI’s Answers? — Understanding and Judgement through Physics, Life Science and Social Simulation.
+6  Quantum Economics — Foundations and Applications.
+7  ‘I attended Dr Akira Murata’s seminar in Bengaluru today, 22 September 2026.’  [the college’s name only if the coordinator says yes — I will tell you]
+8  Acharya AI Dojo, student track: the speaker’s own free practice site, not the college’s; no login, no form.  [its name in a post: coordinator’s OK, as line 7]
+9  Awesome AI Asia: co-founded in 2025, Seoul · AI literacy · SME productivity · publications · awesomeai.asia
+10 Instagram: @awesomebooks.asia. No official hashtag — use honest ones of your own.
+NOT on this sheet, so it may not be said: any other year or place, staff or customer numbers, offices, awards, ‘bestseller’, prices, discounts, ratings, reviews, ‘recommended by’, partnerships, quotes from the books.
+Honest wording: ‘I met the author today’ · ‘posted from his seminar, as a team exercise’ · never ‘I read it’ or ‘I recommend it’ unless you have.
+
+=== PROMPT A - the bare draft (fill in the brackets; give it nothing else)
+Write a social media post of 60 words or fewer for [audience] on [platform]. Tell them about the book "[title]" (India Special Edition, Kindle edition on Amazon.in) by Akira Murata, co-founder of Awesome AI Asia. I attended his seminar today; this post is a seminar exercise. I have not read the book yet. Start with a strong first line.
+
+=== PROMPT B - the critic (paste the draft and the fact sheet under it)
+Below is a draft post and a numbered fact sheet. List every claim in the draft that is NOT on the fact sheet. Do not rewrite anything yet.
+
+=== PROMPT C - the rewrite (facts only, with line numbers; your own hook as line one)
+Rewrite the draft using ONLY the facts on the sheet, each with its line number in brackets. Replace the first line with this one, unchanged: "[your hook from box 4]". Where you would need a fact that is not on the sheet, write [CONFIRM]. 60 words or fewer. Do not add prices, awards, reviews or numbers.
+
+Posting is voluntary. Say you attended the seminar today and that the post is a seminar exercise. Never 'I read it' or 'I recommend it' unless you have. No bought likes, no bots. Your college's rules come first.
