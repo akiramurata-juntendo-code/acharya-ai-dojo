@@ -40,6 +40,9 @@ details.ladder p{margin:0;padding:8px 12px 12px;font-size:14.5px;color:var(--gre
 .master img{width:96px;height:auto;flex:0 0 auto}
 .bubble{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
 .bubble b{color:var(--goldtext)}
+.guide{display:flex;gap:12px;align-items:center;margin:10px 0 6px;background:var(--beige);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.guide .faces{display:flex;gap:6px;flex:0 0 auto}.guide img{width:72px;height:auto;border:2px solid var(--gold);border-radius:8px;background:#fff}
+.guide p{margin:0;font-size:15.5px}.guide b{color:var(--goldtext)}
 .safe{background:var(--mist);border-left:5px solid var(--navy);padding:10px 12px;border-radius:4px;font-size:15.5px;margin:12px 0}
 h2{font-size:22px;margin:30px 0 6px;padding-top:8px;border-top:2px solid var(--gold)}
 h2[id]{scroll-margin-top:60px}
@@ -96,6 +99,7 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
 <main class="wrap">
   <div class="master"><img src="../assets/master.webp" alt="The dojo master, an old man holding a scroll" width="400" height="533">
     <div class="bubble">Welcome. One rule in this dojo: the AI is your <b>critic</b> and your <b>drafter</b> — never your <b>witness</b>. It argues well. It testifies badly.</div></div>
+  <div class="guide"><div class="faces"><img src="../assets/minobe.webp" alt="Minobe, a boy ninja in navy blue with glasses, holding scrolls" width="400" height="533"></div><p><b>Minobe</b> of the Koga school guides the Research track. He reads with the page in his hand, and never signs a summary he has not checked.</p></div>
   <div class="belt" id="belt" aria-live="polite"></div>
   <details class="ladder" open><summary>How the belts work</summary><ol id="ladder"></ol><p>You tick the boxes yourself when you have done a mission or a drill. The belts are a study guide, not a certificate, and nothing leaves your device.</p></details>
   <div class="safe" id="safe"></div>
@@ -118,7 +122,7 @@ footer button{background:transparent;color:#fff;border:1px solid #8794A6;border-
   <h2 id="about">About this page</h2>
   <p>A practice page made by Dr Akira Murata (Juntendo University, Japan; co-founder, Awesome AI Asia) for participants of <i>Japan Meets India AI Nexus 2026</i> at Acharya Institutes, Bengaluru. The page is run by Dr Murata, <b>not</b> by Acharya Institutes; it is not an official service of the institute, and it says nothing about what any particular AI tool can do.</p>
   <p><b>Privacy:</b> this page has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All people, colleges, offices, studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
-  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · <a href="../">Dojo home</a> · Version 2.7, 22 September 2026</p>
+  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · <a href="../">Dojo home</a> · Version 2.8, 22 September 2026</p>
 </main>
 <footer><div class="wrap">AI drafts and criticises. You verify, decide and sign.<br><button id="reset" type="button">Reset my progress on this track</button></div></footer>
 

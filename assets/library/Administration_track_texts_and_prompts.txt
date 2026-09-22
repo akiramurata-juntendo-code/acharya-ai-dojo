@@ -7,7 +7,7 @@ Mission 1 · Document first, instruction last - then check the draft
 SOURCE MEMO - your only source (fictional)
 M1  Sender: Training Office, Example College (fictional). Readers: office colleagues.
 M2  Purpose: invite colleagues to express interest in an optional Clear Files briefing.
-M3  Proposed date and time: 16 November 2027, 14:00-14:30. These are not final.
+M3  Proposed date and time: 18 November 2027, 14:00-14:30. These are not final.
 M4  No room has been assigned.
 M5  Approval from the office manager is still pending.
 M6  Interested colleagues may reply. No reply deadline has been set.
@@ -20,7 +20,7 @@ Subject: Approved Clear Files briefing - reply by 12 November
 Dear colleagues,
 
 Confirmed briefing
-The office manager has approved the Clear Files briefing for 16 November 2027, 14:00-14:30, in Room 204. All office staff must attend.
+The office manager has approved the Clear Files briefing for 18 November 2027, 14:00-14:30, in Room 204. All office staff must attend.
 
 Book now
 Reply by 12 November 2027 at 17:00 to reserve your place. The manager will probably allow refreshments. Please do not send student or staff records.

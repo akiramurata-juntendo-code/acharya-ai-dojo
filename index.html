@@ -41,6 +41,9 @@ details.ladder p{margin:0;padding:8px 12px 12px;font-size:14.5px;color:var(--gre
 .master img{width:96px;height:auto;flex:0 0 auto}
 .bubble{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
 .bubble b{color:var(--goldtext)}
+.guide{display:flex;gap:12px;align-items:center;margin:10px 0 6px;background:var(--beige);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.guide .faces{display:flex;gap:6px;flex:0 0 auto}.guide img{width:72px;height:auto;border:2px solid var(--gold);border-radius:8px;background:#fff}
+.guide p{margin:0;font-size:15.5px}.guide b{color:var(--goldtext)}
 .safe{background:var(--mist);border-left:5px solid var(--navy);padding:10px 12px;border-radius:4px;font-size:15.5px;margin:12px 0}
 h2{font-size:22px;margin:30px 0 6px;padding-top:8px;border-top:2px solid var(--gold)}
 h2[id]{scroll-margin-top:60px}
@@ -92,6 +95,7 @@ a.door .who{display:block;color:var(--grey);font-size:15.5px}
 a.door .go{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-weight:700}
 a.door .chip{display:inline-block;font-weight:700;font-size:13.5px;padding:3px 10px;border-radius:999px;border:2px solid var(--navy);background:#fff;color:var(--navy)}
 a.door .chip.Yellow{background:#F6D860}a.door .chip.Green{background:#7FB58A}a.door .chip.Brown{background:#9C6B3F;color:#fff}a.door .chip.Black{background:#111;color:#fff}
+a.door .face{display:flex;gap:4px;margin-left:auto;margin-right:10px}a.door .face img{width:52px;height:auto;border:2px solid var(--gold);border-radius:6px;background:#fff}
 @media (min-width:700px){.doors{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}}
 </style>
 </head>
@@ -109,9 +113,9 @@ a.door .chip.Yellow{background:#F6D860}a.door .chip.Green{background:#7FB58A}a.d
     <div class="bubble">Welcome. Choose your dojo. One rule inside: the AI is your <b>critic</b> and your <b>drafter</b> — never your <b>witness</b>.</div></div>
 
   <div class="doors">
-    <a class="door" href="research/"><span class="kind">Dojo 1</span><span class="name">Research track</span><span class="who">For faculty members, researchers and research students · 3 missions · 13 drills</span><span class="go"><span class="chip" id="belt_res">White belt</span><span>Enter →</span></span></a>
-    <a class="door" href="students/"><span class="kind">Dojo 2</span><span class="name">Student track</span><span class="who">For MBA, BBA, MCA and BCA students · 3 missions · 8 drills</span><span class="go"><span class="chip" id="belt_stu">White belt</span><span>Enter →</span></span></a>
-    <a class="door" href="administration/"><span class="kind">Dojo 3</span><span class="name">Administration track</span><span class="who">For administrative staff and academic leaders · 3 missions · 13 drills</span><span class="go"><span class="chip" id="belt_adm">White belt</span><span>Enter →</span></span></a>
+    <a class="door" href="research/"><span class="kind">Dojo 1</span><span class="name">Research track</span><span class="who">For faculty members, researchers and research students · 3 missions · 13 drills</span><span class="go"><span class="chip" id="belt_res">White belt</span><span class="face"><img src="assets/minobe.webp" alt="Minobe, a boy ninja in navy blue with glasses, holding scrolls" width="400" height="533"></span><span>Enter →</span></span></a>
+    <a class="door" href="students/"><span class="kind">Dojo 2</span><span class="name">Student track</span><span class="who">For MBA, BBA, MCA and BCA students · 3 missions · 8 drills</span><span class="go"><span class="chip" id="belt_stu">White belt</span><span class="face"><img src="assets/hattori.webp" alt="Hattori, a boy ninja in red giving a thumbs-up" width="400" height="533"><img src="assets/hana.webp" alt="Hana, a girl ninja in red with a ponytail" width="400" height="533"></span><span>Enter →</span></span></a>
+    <a class="door" href="administration/"><span class="kind">Dojo 3</span><span class="name">Administration track</span><span class="who">For administrative staff and academic leaders · 3 missions · 13 drills</span><span class="go"><span class="chip" id="belt_adm">White belt</span><span class="face"><img src="assets/hachi.webp" alt="Hachi, a Koga ninja dog in a black hood and an orange headband, waving, with a short sword and a scroll" width="400" height="533"></span><span>Enter →</span></span></a>
   </div>
 
   <details class="ladder" open><summary>How the belts work</summary>
@@ -133,7 +137,7 @@ a.door .chip.Yellow{background:#F6D860}a.door .chip.Green{background:#7FB58A}a.d
   <h2 id="about">About this page</h2>
   <p>A practice site made by Dr Akira Murata (Juntendo University, Japan; co-founder, Awesome AI Asia) for participants of <i>Japan Meets India AI Nexus 2026</i> at Acharya Institutes, Bengaluru. The site is run by Dr Murata, <b>not</b> by Acharya Institutes; it is not an official service of the institute, and it says nothing about what any particular AI tool can do.</p>
   <p><b>Privacy:</b> this site has no forms, no analytics and no cookies, and it sends nothing anywhere. Your ticks are stored only in this browser on this device. <b>All people, colleges, offices, studies, projects, companies, plants, magazines and reference names in the examples are invented.</b></p>
-  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 2.7, 22 September 2026</p>
+  <p class="muted">Questions: a.murata.hf@juntendo.ac.jp · Version 2.8, 22 September 2026</p>
 </main>
 <footer><div class="wrap">AI drafts and criticises. You verify, decide and sign.</div></footer>
 <script>
